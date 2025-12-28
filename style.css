@@ -1,0 +1,92 @@
+/* 1. The Global Settings - Setting the Mood */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Deep Black Background */
+    color: #fff; /* White Text */
+    font-family: 'Helvetica', sans-serif;
+    overflow-x: hidden; /* Prevents awkward side-scrolling */
+}
+
+/* 2. The Container (The Parent) */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: transparent; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5; /* Sit above the absolute background */
+}
+
+/* 3. The Title - The Hero of the site */
+.main-title {
+    position: relative;    /* ADDED: This allows the z-index (layering) to actually work */
+    z-index: 10;           /* Keep this on top of the 3D object */
+    pointer-events: none;  /* Allows you to click 'through' the text to touch the 3D object */
+    
+    font-size: 8vw; 
+    font-weight: 900;
+    text-align: center;    /* Ensures text stays centered */
+    text-transform: uppercase; /* ADDED: Makes it look more 'cinematic' like the video */
+    letter-spacing: 15px;      /* ADDED: Spreads the letters out for that high-end look */
+    
+    /* This ensures the title doesn't move when we scroll; GSAP will handle the movement */
+    margin: 0; 
+}
+
+
+
+#three-d-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Pushes it to the VERY back layer */
+    background-color: #000;
+    overflow: hidden;
+}
+
+.bgv {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills screen without stretching */
+    opacity: 0.5;      /* Makes it subtle so text is readable */
+    /* This filter makes the video look like a premium 3D render */
+    filter: grayscale(1) brightness(0.6) contrast(1.2); 
+}
+/* 5. The Centered Description Section */
+.description {
+    width: 100vw;           /* Force full viewport width */
+    height: 100vh;          /* Force full viewport height */
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center;     /* Vertical center */
+    background: linear-gradient(to bottom, #000, #1a1a1a);
+    margin: 0;               /* Remove any accidental outer spacing */
+    padding: 0;              /* Remove any accidental inner spacing */
+    overflow: hidden;
+}
+
+.text-content {
+    width: 100%;             /* Occupy the full width of the parent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Force children (h2 and p) to the center */
+    text-align: center;
+}
+
+.text-content p {
+    font-size: 1.5vw;
+    color: #888;
+    max-width: 600px;        /* Keeps the line length readable */
+    margin: 0 auto;          /* The classic 'Auto-Center' trick for blocks */
+    line-height: 1.6;
+}
