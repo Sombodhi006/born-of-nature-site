@@ -120,20 +120,40 @@ body {
     letter-spacing: 2px;
 }
 
-.stack-icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 10px;
+.stack-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+    text-align: left;
 }
 
-.stack-icons span {
-    font-size: 0.65rem;
-    padding: 5px 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.stack-item {
+    padding: 15px;
+    border-left: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.tech-name {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.tech-desc {
+    font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    line-height: 1.5;
+}
+
+/* Mobile Fix for Gautam's phone */
+@media (max-width: 768px) {
+    .stack-list {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
 }
 
 .copyright {
@@ -143,12 +163,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* Ensure the footer is responsive for Gautam's phone */
-@media (max-width: 768px) {
-    .stack-icons {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+
 
 
