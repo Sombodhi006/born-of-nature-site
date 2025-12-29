@@ -91,3 +91,64 @@ body {
     line-height: 1.6;
 }
 
+#system-credits {
+    padding: 80px 20px 40px;
+    background: rgba(0, 0, 0, 0.95);
+    border-top: 1px solid rgba(0, 255, 136, 0.1);
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.dev-tag, .ai-tag {
+    margin-bottom: 30px;
+}
+
+.label {
+    font-size: 0.7rem;
+    color: var(--accent-color);
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    opacity: 0.7;
+}
+
+.dev-tag h3, .ai-tag h3 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.stack-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.stack-icons span {
+    font-size: 0.65rem;
+    padding: 5px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.copyright {
+    margin-top: 50px;
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 2px;
+}
+
+/* Ensure the footer is responsive for Gautam's phone */
+@media (max-width: 768px) {
+    .stack-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
